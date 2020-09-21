@@ -1,5 +1,6 @@
 {
-  "name": "reward-autotask",
+  "name": "defender-autotask-reward",
+  "description": "An OpenZeppelin Defender Autotask that rewards Single Random Winner prize strategies",
   "version": "0.1.0",
   "main": "src/cli.js",
   "author": "Brendan Asselstine <brendan@pooltogether.com>",
