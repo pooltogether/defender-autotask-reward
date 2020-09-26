@@ -2,10 +2,11 @@ const ethers = require("ethers")
 const SingleRandomWinnerAbi = require("@pooltogether/pooltogether-contracts/abis/SingleRandomWinner.json")
 
 exports.reward = async function (relayer, network, singleRandomWinnerAddresses = []) {
-  const provider = ethers.getDefaultProvider(network)
+  const provider = await ethers.getDefaultProvider(network)
 
   for (let i = 0; i < singleRandomWinnerAddresses.length; i++) {
     const singleRandomWinnerAddress = singleRandomWinnerAddresses[i]
+    console.log(`Checking SingleRandomWinner(${singleRandomWinnerAddress})`)
     const singleRandomWinner = new ethers.Contract(singleRandomWinnerAddress, SingleRandomWinnerAbi, provider)
 
     if (await singleRandomWinner.canStartAward()) {
