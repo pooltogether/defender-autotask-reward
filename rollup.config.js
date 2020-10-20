@@ -16,12 +16,23 @@ const baseConfig = {
   ]
 }
 
-export default [{
-  ...baseConfig,
-  input: 'src/rinkeby.js',
-  output: {
-    file: 'dist/rinkeby-bundle.js',
-    format: 'cjs',
-    exports: 'named'
+export default [
+  {
+    ...baseConfig,
+    input: 'src/rinkeby.js',
+    output: {
+      file: 'dist/rinkeby-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
   },
-}]
+  {
+    ...baseConfig,
+    input: 'src/ropsten.js',
+    output: {
+      file: 'dist/ropsten-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
+  }
+]
