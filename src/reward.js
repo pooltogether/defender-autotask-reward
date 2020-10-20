@@ -14,9 +14,11 @@ exports.reward = async function (relayer, network, singleRandomWinnerAddresses =
 
       if (relayer) {
         const unsignedTx = await singleRandomWinner.populateTransaction.startAward()
+        const gasLimit = (await singleRandomWinner.estimateGas.startAward()).toNumber()
         await relayer.sendTransaction({
           to: unsignedTx.to,
           data: unsignedTx.data,
+          gasLimit,
           speed: 'average'
         })
       } else {
@@ -28,9 +30,11 @@ exports.reward = async function (relayer, network, singleRandomWinnerAddresses =
 
       if (relayer) {
         const unsignedTx = await singleRandomWinner.populateTransaction.completeAward()
+        const gasLimit = (await singleRandomWinner.estimateGas.completeAward()).toNumber()
         await relayer.sendTransaction({
           to: unsignedTx.to,
           data: unsignedTx.data,
+          gasLimit,
           speed: 'average'
         })
       } else {

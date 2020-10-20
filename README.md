@@ -41,5 +41,7 @@ $ direnv allow
 Set the vars to what you need, then run:
 
 ```
-$ yarn rinkeby
+$ yarn reward [network]
 ```
+
+Where [network] is `rinkeby` or `ropsten`

@@ -15,7 +15,7 @@
   "scripts": {
     "cli": "./src/cli.js",
     "build": "rollup -c rollup.config.js",
-    "rinkeby": "./src/cli.js -n rinkeby -a $SINGLE_RANDOM_WINNER_ADDRESSES -da $DEFENDER_RELAYER_API_KEY -ds $DEFENDER_RELAYER_SECRET"
+    "reward": "./src/cli.js -da $DEFENDER_RELAYER_API_KEY -ds $DEFENDER_RELAYER_SECRET -n"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
