@@ -17,7 +17,6 @@ exports.reward = async function (relayer, network, singleRandomWinnerAddresses =
         await relayer.sendTransaction({
           to: unsignedTx.to,
           data: unsignedTx.data,
-          gasLimit: 500000,
           speed: 'average'
         })
       } else {
@@ -32,7 +31,6 @@ exports.reward = async function (relayer, network, singleRandomWinnerAddresses =
         await relayer.sendTransaction({
           to: unsignedTx.to,
           data: unsignedTx.data,
-          gasLimit: 500000,
           speed: 'average'
         })
       } else {
