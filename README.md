@@ -10,9 +10,11 @@ First build the project:
 $ yarn build
 ```
 
-This will create `dist/rinkeby-build.js`.
+This will create:
+ - `dist/rinkeby-build.js`
+ - `dist/ropsten-build.js`
 
-Next create a new Autotask in Defender bound to a Relay.  Cut and paste the contents of the above file into the `Code` portion of the relayer.
+Copy the contents of those files into their respectives Autotasks in OpenZeppelin Defender.
 
 # Running locally
 
