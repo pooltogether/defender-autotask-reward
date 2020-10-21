@@ -19,6 +19,15 @@ const baseConfig = {
 export default [
   {
     ...baseConfig,
+    input: 'src/mainnet.js',
+    output: {
+      file: 'dist/mainnet-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
+  },
+  {
+    ...baseConfig,
     input: 'src/rinkeby.js',
     output: {
       file: 'dist/rinkeby-bundle.js',

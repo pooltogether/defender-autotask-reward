@@ -589,10 +589,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.2.0.tgz#3e6b3a7662d8ed64271ade96ef42655db983fd9d"
   integrity sha512-bUOmkSoPkjnUyMiKo6RYnb0VHBk5D9KKDAgNLzF41aqAM3TeE0yGdFF5dVRcV60pZdJLlyFT/jjXIZCWyyEzAQ==
 
-"@pooltogether/current-pool-data@3.0.0-rc.1b":
-  version "3.0.0-rc.1b"
-  resolved "https://registry.yarnpkg.com/@pooltogether/current-pool-data/-/current-pool-data-3.0.0-rc.1b.tgz#b656319f04c560bdfe88e1fd883c98fb383f2d6b"
-  integrity sha512-DWkKs3lzCyp/QPAPMrjtJTyG8uUoH23thivUkclFvIE69UvjnvvqNjX9X32sugfGNwQYK+7hFLTc508QQtTYFA==
+"@pooltogether/current-pool-data@3.0.0-rc.1c":
+  version "3.0.0-rc.1c"
+  resolved "https://registry.yarnpkg.com/@pooltogether/current-pool-data/-/current-pool-data-3.0.0-rc.1c.tgz#d62d0e3e742abb01c6f65e87d7481102715d0215"
+  integrity sha512-lDOCYg+qJsM4o/9E0xCvQaa+xJsZ8maGdmoIk6R55RXumaxRVpMTYoeOVdbnuBVhyl04X3uqyaD3nxJ6jcX1tg==
 
 "@pooltogether/fixed-point@pooltogether/fixed-point.git#0.1.0-upgradeable.1":
   version "0.1.0"
@@ -600,10 +600,10 @@
   dependencies:
     "@openzeppelin/contracts-ethereum-package" "^3.0.0"
 
-"@pooltogether/pooltogether-contracts@^3.0.0-rc.1":
-  version "3.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-contracts/-/pooltogether-contracts-3.0.0-rc.1.tgz#c2b6011484105083eecdbd645cfded63f30e5bfe"
-  integrity sha512-EJSjd2bF8rREgtNh+1IFbFDqe+Qv3eL7OgNsqSofdJTm9IA3kWnvOMYrMhuTPaOE5Z9QZ7iTJqquXe5J1XsIrw==
+"@pooltogether/pooltogether-contracts@^3.0.0-rc.1b":
+  version "3.0.0-rc.1b"
+  resolved "https://registry.yarnpkg.com/@pooltogether/pooltogether-contracts/-/pooltogether-contracts-3.0.0-rc.1b.tgz#2038aa521171645d27629615b328d5935e5d56e4"
+  integrity sha512-ZD0AdGHqa0G5fUbIvsvTpjJUK3wx9Yq57ICzt5g75t+G/csqWlbjZVew0/ihHdMooO7e54tOs7+OE3jScqAmIw==
   dependencies:
     "@opengsn/gsn" "^2.0.1"
     "@openzeppelin/contracts-ethereum-package" "3.0.0"
