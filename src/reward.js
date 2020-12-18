@@ -1,13 +1,16 @@
 const ethers = require("ethers")
-const SingleRandomWinnerAbi = require("@pooltogether/pooltogether-contracts/abis/SingleRandomWinner.json")
+const PeriodicPrizeStrategyABI = require("@pooltogether/pooltogether-contracts/abis/PeriodicPrizeStrategy.json")
+const { getPrizeStrategies } = require('./getPrizeStrategies')
 
-exports.reward = async function (relayer, network, singleRandomWinnerAddresses = []) {
-  const provider = await ethers.getDefaultProvider(network)
+exports.reward = async function (relayer, network) {
+  const periodicPrizeStrategies = getPrizeStrategies(network)
 
-  for (let i = 0; i < singleRandomWinnerAddresses.length; i++) {
-    const singleRandomWinnerAddress = singleRandomWinnerAddresses[i]
+  const provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)
+
+  for (let i = 0; i < periodicPrizeStrategies.length; i++) {
+    const singleRandomWinnerAddress = periodicPrizeStrategies[i]
     console.log(`Checking SingleRandomWinner(${singleRandomWinnerAddress})`)
-    const singleRandomWinner = new ethers.Contract(singleRandomWinnerAddress, SingleRandomWinnerAbi, provider)
+    const singleRandomWinner = new ethers.Contract(singleRandomWinnerAddress, PeriodicPrizeStrategyABI, provider)
 
     if (await singleRandomWinner.canStartAward()) {
       console.log(`Starting award for ${singleRandomWinnerAddress}...`)

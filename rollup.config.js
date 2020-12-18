@@ -1,6 +1,7 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
+import replace from '@rollup/plugin-replace'
 
 const baseConfig = {
   external: ['ethers', 'defender-relay-client'],
@@ -10,6 +11,9 @@ const baseConfig = {
     exports: 'named'
   },
   plugins: [
+    replace({
+      'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY)
+    }),
     nodeResolve(),
     commonjs(),
     json()
@@ -31,15 +35,6 @@ export default [
     input: 'src/rinkeby.js',
     output: {
       file: 'dist/rinkeby-bundle.js',
-      format: 'cjs',
-      exports: 'named'
-    },
-  },
-  {
-    ...baseConfig,
-    input: 'src/ropsten.js',
-    output: {
-      file: 'dist/ropsten-bundle.js',
       format: 'cjs',
       exports: 'named'
     },
