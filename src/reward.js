@@ -8,16 +8,16 @@ exports.reward = async function (relayer, network) {
   const provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)
 
   for (let i = 0; i < periodicPrizeStrategies.length; i++) {
-    const singleRandomWinnerAddress = periodicPrizeStrategies[i]
-    console.log(`Checking SingleRandomWinner(${singleRandomWinnerAddress})`)
-    const singleRandomWinner = new ethers.Contract(singleRandomWinnerAddress, PeriodicPrizeStrategyABI, provider)
+    const periodicPrizeStrategyAddress = periodicPrizeStrategies[i]
+    console.log(`Checking PeriodicPrizeStrategy(${periodicPrizeStrategyAddress})`)
+    const periodicPrizeStrategy = new ethers.Contract(periodicPrizeStrategyAddress, PeriodicPrizeStrategyABI, provider)
 
-    if (await singleRandomWinner.canStartAward()) {
-      console.log(`Starting award for ${singleRandomWinnerAddress}...`)
+    if (await periodicPrizeStrategy.canStartAward()) {
+      console.log(`Starting award for ${periodicPrizeStrategyAddress}...`)
 
       if (relayer) {
-        const unsignedTx = await singleRandomWinner.populateTransaction.startAward()
-        const gasLimit = (await singleRandomWinner.estimateGas.startAward()).toNumber()
+        const unsignedTx = await periodicPrizeStrategy.populateTransaction.startAward()
+        const gasLimit = (await periodicPrizeStrategy.estimateGas.startAward()).toNumber()
         console.log('GAS LIMIT: ', gasLimit.toString())
         await relayer.sendTransaction({
           to: unsignedTx.to,
@@ -29,12 +29,12 @@ exports.reward = async function (relayer, network) {
         console.warn('No relayer present.  Cannot start award.')
       }
       
-    } else if (await singleRandomWinner.canCompleteAward()) {
-      console.log(`Completing award for ${singleRandomWinnerAddress}...`)
+    } else if (await periodicPrizeStrategy.canCompleteAward()) {
+      console.log(`Completing award for ${periodicPrizeStrategyAddress}...`)
 
       if (relayer) {
-        const unsignedTx = await singleRandomWinner.populateTransaction.completeAward()
-        const gasLimit = (await singleRandomWinner.estimateGas.completeAward()).toNumber()
+        const unsignedTx = await periodicPrizeStrategy.populateTransaction.completeAward()
+        const gasLimit = (await periodicPrizeStrategy.estimateGas.completeAward()).toNumber()
         console.log('GAS LIMIT: ', gasLimit.toString())
         await relayer.sendTransaction({
           to: unsignedTx.to,
