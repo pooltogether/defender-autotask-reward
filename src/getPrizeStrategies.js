@@ -8,6 +8,7 @@ function getPrizeStrategies(network) {
   } else if (network == 'mainnet') {
     prizeStrategyAddresses.push(contractAddresses[1].dai.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].uni.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[1].usdc.prizeStrategy)
   } else {
     throw new Error(`Unknown network: ${network}`)
   }
