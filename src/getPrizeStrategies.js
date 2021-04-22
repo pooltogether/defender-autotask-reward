@@ -9,8 +9,10 @@ function getPrizeStrategies(network) {
     prizeStrategyAddresses.push(contractAddresses[1].dai.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].uni.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].usdc.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[1].usdt.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].comp.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].pool.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[1].badger.prizeStrategy)
   } else {
     throw new Error(`Unknown network: ${network}`)
   }

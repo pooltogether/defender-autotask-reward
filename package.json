@@ -6,16 +6,20 @@
   "author": "Brendan Asselstine <brendan@pooltogether.com>",
   "license": "MIT",
   "dependencies": {
-    "@pooltogether/current-pool-data": "3.3.2",
+    "@ethersproject/abstract-provider": "^5.1.0",
+    "@ethersproject/abstract-signer": "^5.1.0",
+    "@pooltogether/current-pool-data": "3.3.8-g",
     "@pooltogether/pooltogether-contracts": "3.1.0",
     "commander": "^6.1.0",
+    "defender-autotask-client": "^1.5.1",
     "defender-relay-client": "^0.2.4",
     "ethers": "^5.0.14"
   },
   "scripts": {
     "cli": "./src/cli.js",
     "build": "rollup -c rollup.config.js",
-    "reward": "./src/cli.js -da $DEFENDER_RELAYER_API_KEY -ds $DEFENDER_RELAYER_SECRET -n"
+    "reward": "./src/cli.js -da $DEFENDER_RELAYER_API_KEY -ds $DEFENDER_RELAYER_SECRET -n",
+    "update": "yarn build && ./scripts/updateTask.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",

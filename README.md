@@ -2,6 +2,13 @@
 
 This project implements an Autotask for [OpenZeppelin Defender](https://defender.openzeppelin.com/) that rewards the PoolTogether V3 Single Random Winner prize strategies automatically.
 
+# Setup
+
+1. Copy `.envrc.example` to `.envrc`
+2. Update `.envrc` with the appropriate variables
+3. Run `direnv allow`.  See [direnv](https://direnv.net)
+4. Run `yarn update` to update the autotasks.
+
 # Usage
 
 First build the project:
