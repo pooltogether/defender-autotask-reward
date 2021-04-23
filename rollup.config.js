@@ -38,5 +38,14 @@ export default [
       format: 'cjs',
       exports: 'named'
     },
+  },
+  {
+    ...baseConfig,
+    input: 'src/polygon.js',
+    output: {
+      file: 'dist/polygon-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
   }
 ]

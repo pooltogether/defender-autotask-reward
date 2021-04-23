@@ -15,6 +15,7 @@ async function updateAutotask(autotaskId, file) {
 async function run() {
   await updateAutotask(process.env.MAINNET_AUTOTASK_ID, './dist/mainnet-bundle.js')
   await updateAutotask(process.env.RINKEBY_AUTOTASK_ID, './dist/rinkeby-bundle.js')
+  await updateAutotask(process.env.POLYGON_AUTOTASK_ID, './dist/polygon-bundle.js')
 }
 
 run()
