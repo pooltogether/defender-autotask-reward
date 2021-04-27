@@ -13,8 +13,10 @@ function getPrizeStrategies(network) {
     prizeStrategyAddresses.push(contractAddresses[1].comp.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].pool.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].badger.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[1].aaveUsdt.prizeStrategy)
   } else if (network == 'polygon') {
     prizeStrategyAddresses.push(contractAddresses[137].dai.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[137].usdt.prizeStrategy)
   } else {
     throw new Error(`Unknown network: ${network}`)
   }
