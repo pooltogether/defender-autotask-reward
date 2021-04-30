@@ -12,7 +12,8 @@ const baseConfig = {
   },
   plugins: [
     replace({
-      'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY)
+      'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY),
+      'process.env.QUICKNODE_URL': JSON.stringify(process.env.QUICKNODE_URL)
     }),
     nodeResolve(),
     commonjs(),
