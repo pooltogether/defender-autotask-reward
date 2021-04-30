@@ -5,7 +5,14 @@ const { getPrizeStrategies } = require('./getPrizeStrategies')
 exports.reward = async function (relayer, network) {
   const periodicPrizeStrategies = getPrizeStrategies(network)
 
-  const provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)
+  let provider
+  if(network == 'polygon'){
+    provider = new ethers.providers.JsonRpcProvider(process.env.QUICKNODE_URL)
+  }
+  else{
+    provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)
+  }
+  
 
   for (let i = 0; i < periodicPrizeStrategies.length; i++) {
     const periodicPrizeStrategyAddress = periodicPrizeStrategies[i]
