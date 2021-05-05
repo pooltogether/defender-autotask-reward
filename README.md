@@ -1,6 +1,6 @@
-# PoolTogether V3 Single Random Winner Defender Autotask
+# PoolTogether V3 Reward Defender Autotask
 
-This project implements an Autotask for [OpenZeppelin Defender](https://defender.openzeppelin.com/) that rewards the PoolTogether V3 Single Random Winner prize strategies automatically.
+This project implements an Autotask for [OpenZeppelin Defender](https://defender.openzeppelin.com/) that rewards the PoolTogether V3 prize strategies automatically.
 
 # Setup
 
@@ -51,4 +51,4 @@ Set the vars to what you need, then run:
 $ yarn reward [network]
 ```
 
-Where [network] is `rinkeby` or `ropsten`
+Where [network] is `rinkeby`, `ropsten` or `polygon`
