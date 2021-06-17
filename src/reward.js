@@ -7,7 +7,7 @@ exports.reward = async function (relayer, network) {
 
   let provider
   if(network == 'polygon'){
-    provider = new ethers.providers.JsonRpcProvider(process.env.POLYGON_RPC_URL)
+    provider = new ethers.providers.JsonRpcProvider("https://polygon-mainnet.infura.io/v3/"+process.env.INFURA_API_KEY) // ethers Provider does not support polygon-infura
   }
   else{
     provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)

@@ -9,7 +9,7 @@ function getPrizeStrategies(network) {
     prizeStrategyAddresses.push(contractAddresses[4].bat.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[4].fastDai.prizeStrategy)
   } else if (network == 'mainnet') {
-    // prizeStrategyAddresses.push(contractAddresses[1].dai.prizeStrategy)
+    // prizeStrategyAddresses.push(contractAddresses[1].dai.prizeStrategy) // commented out as Upkeep System is handling
     // prizeStrategyAddresses.push(contractAddresses[1].uni.prizeStrategy)
     // prizeStrategyAddresses.push(contractAddresses[1].usdc.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[1].usdt.prizeStrategy)
