@@ -17,7 +17,7 @@ exports.reward = async function (relayer, network) {
   for (let i = 0; i < periodicPrizeStrategies.length; i++) {
     const periodicPrizeStrategyAddress = periodicPrizeStrategies[i]
     console.log(`Checking PeriodicPrizeStrategy(${periodicPrizeStrategyAddress})`)
-    const periodicPrizeStrategy = new ethers.Contract(periodicPrizeStrategyAddress, PeriodicPrizeStrategyABI, provider)
+    const periodicPrizeStrategy = new ethers.Contract(periodicPrizeStrategyAddress, PeriodicPrizeStrategyABI, ethers.Wallet.createRandom().connect(provider))
 
     if (await periodicPrizeStrategy.canStartAward()) {
       console.log(`Starting award for ${periodicPrizeStrategyAddress}...`)
