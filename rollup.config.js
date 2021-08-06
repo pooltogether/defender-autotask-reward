@@ -12,7 +12,9 @@ const baseConfig = {
   },
   plugins: [
     replace({
-      'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY)
+      'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY),
+      'process.env.POLYGON_RPC_URL': JSON.stringify(process.env.POLYGON_RPC_URL),
+      'process.env.BINANCE_RPC_URL': JSON.stringify(process.env.BINANCE_RPC_URL)
     }),
     nodeResolve(),
     commonjs(),
@@ -44,6 +46,15 @@ export default [
     input: 'src/polygon.js',
     output: {
       file: 'dist/polygon-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
+  },
+  {
+    ...baseConfig,
+    input: 'src/binance.js',
+    output: {
+      file: 'dist/binance-bundle.js',
       format: 'cjs',
       exports: 'named'
     },

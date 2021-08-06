@@ -19,7 +19,7 @@
     "cli": "./src/cli.js",
     "build": "rollup -c rollup.config.js",
     "reward": "./src/cli.js -da $DEFENDER_RELAYER_API_KEY -ds $DEFENDER_RELAYER_SECRET -n",
-    "update": "yarn build && ./scripts/updateTask.js"
+    "update": "yarn build && ./scripts/updateTask.js --network"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",

@@ -9,16 +9,14 @@ function getPrizeStrategies(network) {
     prizeStrategyAddresses.push(contractAddresses[4].bat.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[4].fastDai.prizeStrategy)
   } else if (network == 'mainnet') {
-    // prizeStrategyAddresses.push(contractAddresses[1].dai.prizeStrategy) // commented out as Upkeep System is handling
-    // prizeStrategyAddresses.push(contractAddresses[1].uni.prizeStrategy)
-    // prizeStrategyAddresses.push(contractAddresses[1].usdc.prizeStrategy)
-    prizeStrategyAddresses.push(contractAddresses[1].usdt.prizeStrategy)
-    // prizeStrategyAddresses.push(contractAddresses[1].comp.prizeStrategy)
-    // prizeStrategyAddresses.push(contractAddresses[1].pool.prizeStrategy)
-    // prizeStrategyAddresses.push(contractAddresses[1].badger.prizeStrategy)
   } else if (network == 'polygon') {
     prizeStrategyAddresses.push(contractAddresses[137].dai.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[137].usdt.prizeStrategy)
+  } else if (network == 'binance') {
+    prizeStrategyAddresses = [
+      '0x9f76c70F387f423B756234e80F2765ACfB689105',
+      '0x950c7052e7c19905e665441c5a421e4dd7a0ebae'
+    ]
   } else {
     throw new Error(`Unknown network: ${network}`)
   }

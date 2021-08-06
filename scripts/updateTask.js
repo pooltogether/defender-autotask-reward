@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+const { program } = require('commander');
+program.option('-n, --network <string>', 'select network (mainnet, rinkeby, polygon or binance)')
+program.parse(process.argv)
+
+const options = program.opts()
+
 const { AutotaskClient } = require('defender-autotask-client');
 const fs = require('fs')
 
@@ -13,14 +19,19 @@ async function updateAutotask(autotaskId, file) {
 }
 
 async function run() {
-  if (process.env.MAINNET_AUTOTASK_ID) {
+  if (options.network == 'mainnet') {
     await updateAutotask(process.env.MAINNET_AUTOTASK_ID, './dist/mainnet-bundle.js')
   }
-  if (process.env.RINKEBY_AUTOTASK_ID) {
+  else if (options.network == 'rinkeby') {
     await updateAutotask(process.env.RINKEBY_AUTOTASK_ID, './dist/rinkeby-bundle.js')
   }
-  if (process.env.POLYGON_AUTOTASK_ID) {
+  else if (options.network == 'polygon') {
     await updateAutotask(process.env.POLYGON_AUTOTASK_ID, './dist/polygon-bundle.js')  
+  }
+  else if (options.network == 'binance') {
+    await updateAutotask(process.env.BINANCE_AUTOTASK_ID, './dist/binance-bundle.js')  
+  } else {
+    throw new Error(`Unknown network ${options.network}`)
   }
 }
 
