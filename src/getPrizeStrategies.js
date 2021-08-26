@@ -12,6 +12,7 @@ function getPrizeStrategies(network) {
   } else if (network == 'polygon') {
     prizeStrategyAddresses.push(contractAddresses[137].dai.prizeStrategy)
     prizeStrategyAddresses.push(contractAddresses[137].usdt.prizeStrategy)
+    prizeStrategyAddresses.push(contractAddresses[137].usdc.prizeStrategy)
   } else if (network == 'binance') {
     prizeStrategyAddresses = [
       '0x9f76c70F387f423B756234e80F2765ACfB689105',
