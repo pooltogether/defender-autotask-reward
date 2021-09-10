@@ -10,6 +10,8 @@ exports.reward = async function (relayer, network) {
     provider = new ethers.providers.JsonRpcProvider(process.env.POLYGON_RPC_URL)
   } else if (network == 'binance') {
     provider = new ethers.providers.JsonRpcProvider(process.env.BINANCE_RPC_URL)
+  } else if (network == 'celo') {
+    provider = new ethers.providers.JsonRpcProvider(process.env.CELO_RPC_URL)
   } else {
     provider = new ethers.providers.InfuraProvider(network, process.env.INFURA_API_KEY)
   }
