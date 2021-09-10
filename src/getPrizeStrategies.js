@@ -18,6 +18,11 @@ function getPrizeStrategies(network) {
       '0x9f76c70F387f423B756234e80F2765ACfB689105',
       '0x950c7052e7c19905e665441c5a421e4dd7a0ebae'
     ]
+  } else if (network == 'celo') {
+    prizeStrategyAddresses = [
+      '0x56837090bb659ee4e468ae22eb97e17cdf829f9f',
+      '0xc935142eef56f2467e2baa8d1821f6d9178320c7'
+    ]
   } else {
     throw new Error(`Unknown network: ${network}`)
   }

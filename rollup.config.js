@@ -14,7 +14,8 @@ const baseConfig = {
     replace({
       'process.env.INFURA_API_KEY': JSON.stringify(process.env.INFURA_API_KEY),
       'process.env.POLYGON_RPC_URL': JSON.stringify(process.env.POLYGON_RPC_URL),
-      'process.env.BINANCE_RPC_URL': JSON.stringify(process.env.BINANCE_RPC_URL)
+      'process.env.BINANCE_RPC_URL': JSON.stringify(process.env.BINANCE_RPC_URL),
+      'process.env.CELO_RPC_URL': JSON.stringify(process.env.CELO_RPC_URL)
     }),
     nodeResolve(),
     commonjs(),
@@ -55,6 +56,15 @@ export default [
     input: 'src/binance.js',
     output: {
       file: 'dist/binance-bundle.js',
+      format: 'cjs',
+      exports: 'named'
+    },
+  },
+  {
+    ...baseConfig,
+    input: 'src/celo.js',
+    output: {
+      file: 'dist/celo-bundle.js',
       format: 'cjs',
       exports: 'named'
     },

@@ -30,6 +30,9 @@ async function run() {
   }
   else if (options.network == 'binance') {
     await updateAutotask(process.env.BINANCE_AUTOTASK_ID, './dist/binance-bundle.js')  
+  }
+  else if (options.network == 'celo') {
+    await updateAutotask(process.env.CELO_AUTOTASK_ID, './dist/celo-bundle.js')
   } else {
     throw new Error(`Unknown network ${options.network}`)
   }
