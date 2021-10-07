@@ -32,7 +32,7 @@ exports.reward = async function (relayer, network) {
           to: unsignedTx.to,
           data: unsignedTx.data,
           gasLimit,
-          speed: 'average'
+          speed: 'safeLow'
         })
       } else {
         console.warn('No relayer present.  Cannot start award.')
@@ -49,7 +49,7 @@ exports.reward = async function (relayer, network) {
           to: unsignedTx.to,
           data: unsignedTx.data,
           gasLimit,
-          speed: 'average'
+          speed: 'safeLow'
         })
       } else {
         console.warn('No relayer present.  Cannot complete award.')
